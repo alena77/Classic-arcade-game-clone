@@ -18,14 +18,24 @@ var Engine = (function(global) {
      * create the canvas element, grab the 2D context for that canvas
      * set the canvas elements height/width and add it to the DOM.
      */
+
+    // html canvas tag usually looks like this: 
+    //<canvas id="someId" width="xx" height="yy"></canvas> 
+
     var doc = global.document,
         win = global.window,
+
+        //this creates <canvas></canvas> tag
         canvas = doc.createElement('canvas'),
+
+        //this reads context, usually looks like this: 
+        //document.querySelector("#someId").getContext("2d")
         ctx = canvas.getContext('2d'),
         lastTime;
-
+    //set width and height of canvas element
     canvas.width = 505;
     canvas.height = 606;
+    //push canvas into dom 
     doc.body.appendChild(canvas);
 
     /* This function serves as the kickoff point for the game loop itself
