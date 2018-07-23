@@ -24,13 +24,17 @@ class Enemy extends Characters{
         this.sprite = 'images/enemy-bug.png';
         this.x=x;
         this.y=y;
+        this.randSpeed=1;
     }
     update(dt){
         super.update();
         if(this.onCanvasX){
             this.x=this.x-6;
+            //generate a random speed increase
+            this.randSpeed = Math.random()*3+1; 
         }else{
-            this.x = this.x+dt;
+            //move your enemy on canvas
+            this.x = this.x+dt*this.randSpeed;
         }
     }
     checkCollisions(player){
@@ -41,7 +45,7 @@ class Enemy extends Characters{
             //&& this.x<=(player.x +.5))
             //this.x>=(player.x - .5)
             if(this.x<=(player.x +.5)&& this.x>=(player.x - .5)) {
-                console.log("they do collide xx");
+                //console.log("they do collide xx");
                 return true;
             }
         }else{
