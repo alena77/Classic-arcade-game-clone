@@ -100,9 +100,9 @@ var Engine = (function(global) {
      * render methods.
      */
     function updateEntities(dt) {
-        //allEnemies.forEach(function(enemy) {
-        //    enemy.update(dt);
-        //});
+        allEnemies.forEach(function(enemy) {
+            enemy.update(dt);
+        });
         player.update();
     }
 
@@ -110,7 +110,7 @@ var Engine = (function(global) {
      * the renderEntities function. Remember, this function is called every
      * game tick (or loop of the game engine) because that's how games work -
      * they are flipbooks creating the illusion of animation but in reality
-     * they are just drawing the entire screen over and over.
+     * they are just drawing the entire screen over and over. 
      */
     function render() {
         /* This array holds the relative URL to the image used

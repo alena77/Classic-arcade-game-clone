@@ -12,8 +12,8 @@ class Characters{
     }
     //update method
     update(dt){
-        this.isOutOfBoundsX = this.x >5;
-        this.isOutOfBoundsY = this.y <1;
+        this.onCanvasX = this.x >5;
+        this.onCanvasY = this.y <1;
     }
 }
 
@@ -24,6 +24,14 @@ class Enemy extends Characters{
         this.sprite = 'images/enemy-bug.png';
         this.x=x;
         this.y=y;
+    }
+    update(dt){
+        super.update();
+        if(this.onCanvasX){
+            this.x=this.x-5;
+        }else{
+            this.x = this.x+dt;
+        }
     }
 }
 
