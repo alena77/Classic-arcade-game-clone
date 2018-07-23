@@ -88,7 +88,7 @@ var Engine = (function(global) {
      * on the entities themselves within your app.js file).
      */
     function update(dt) {
-        //updateEntities(dt);
+        updateEntities(dt);
         // checkCollisions();
     }
 
@@ -100,10 +100,10 @@ var Engine = (function(global) {
      * render methods.
      */
     function updateEntities(dt) {
-        allEnemies.forEach(function(enemy) {
-            enemy.update(dt);
-        });
-        player.update();
+        //allEnemies.forEach(function(enemy) {
+        //    enemy.update(dt);
+        //});
+        //player.update();
     }
 
     /* This function initially draws the "game level", it will then call
@@ -184,7 +184,7 @@ var Engine = (function(global) {
         'images/grass-block.png',
         'images/enemy-bug.png',
         'images/char-boy.png',
-        'images/char-cat-girl.png'
+        'images/char-cat-girl.png',
         'images/Rock.png'
     ]);
 
