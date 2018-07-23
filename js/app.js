@@ -28,7 +28,11 @@ class Player extends Characters{
     }
 }
 
+//display player
+const player = new Player();
 
+//display a bug
+//const bug = new Enemy();
 
 
 // This listens for key presses and sends the keys to your
