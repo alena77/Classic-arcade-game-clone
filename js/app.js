@@ -18,9 +18,11 @@ class Characters{
 
 // Now write your own enemy class
 class Enemy extends Characters{
-    constructor(){
+    constructor(x,y){
         super();
         this.sprite = 'images/enemy-bug.png';
+        this.x=x;
+        this.y=y;
     }
 }
 
@@ -36,8 +38,7 @@ class Player extends Characters{
 const player = new Player();
 
 //display a bug
-//const bug = new Enemy();
-
+const allEnemies = [new Enemy(0,.8),new Enemy(0,1.8),new Enemy(0,2.8) ];
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
