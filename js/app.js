@@ -28,9 +28,22 @@ class Enemy extends Characters{
     update(dt){
         super.update();
         if(this.onCanvasX){
-            this.x=this.x-5;
+            this.x=this.x-6;
         }else{
             this.x = this.x+dt;
+        }
+    }
+    checkCollisions(player){
+        //console.log(this.y+" "+(player.y-0.2));
+
+        if(this.y=== player.y -.2){
+            //console.log("they do collide yy");
+            if(this.x===player.x - .5 && this.x<=player.x +.5){
+                console.log("they do collide");
+                return true;
+            }
+        }else{
+            return false;
         }
     }
 }
