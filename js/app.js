@@ -8,6 +8,21 @@ var Enemy = function() {
     this.sprite = 'images/enemy-bug.png';
 };
 
+class Characters{
+    //sizing of my characters and file location of images
+    constructor(){
+        this.sprite = "images/";
+        this.x=2;
+        this.y=5;
+    }
+
+    // Draw the enemy on the screen, required method for game
+    render(){
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+}
+
+
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
@@ -16,10 +31,6 @@ Enemy.prototype.update = function(dt) {
     // all computers.
 };
 
-// Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
 
 // Now write your own player class
 // This class requires an update(), render() and
