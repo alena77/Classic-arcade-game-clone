@@ -38,8 +38,10 @@ class Enemy extends Characters{
 
         if(this.y=== player.y -.2){
             //console.log("they do collide yy");
-            if(this.x===player.x - .5 && this.x<=player.x +.5){
-                console.log("they do collide");
+            //&& this.x<=(player.x +.5))
+            //this.x>=(player.x - .5)
+            if(this.x<=(player.x +.5)&& this.x>=(player.x - .5)) {
+                console.log("they do collide xx");
                 return true;
             }
         }else{
