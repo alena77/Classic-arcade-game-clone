@@ -24,7 +24,7 @@ class Enemy extends Characters{
         this.sprite = 'images/enemy-bug.png';
         this.x=x;
         this.y=y;
-        this.randSpeed=1;
+        this.randSpeed=Math.random()*3+1;
     }
     update(dt){
         super.update();
