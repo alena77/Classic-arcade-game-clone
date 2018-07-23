@@ -10,6 +10,10 @@ class Characters{
     render(){
         ctx.drawImage(Resources.get(this.sprite), this.x*101, this.y*83);
     }
+    //update method
+    update(dt){
+        
+    }
 }
 
 // Now write your own enemy class
