@@ -12,7 +12,8 @@ class Characters{
     }
     //update method
     update(dt){
-        
+        this.isOutOfBoundsX = this.x >5;
+        this.isOutOfBoundsY = this.y <1;
     }
 }
 
@@ -30,14 +31,26 @@ class Enemy extends Characters{
 class Player extends Characters{
     constructor(){
         super();
+
         this.sprite = 'images/char-cat-girl.png';
+    }
+    handleInput(input){
+        if(input === "left"){
+            this.x=this.x>0 ? this.x -1 : this.x;
+        }else if(input === "right"){
+            this.x=this.x<4 ? this.x +1 : this.x;
+        }else if(input === "up"){
+            this.y=this.y>0 ? this.y -1 : this.y;
+        }else if(input === "down"){
+            this.y=this.y<5 ? this.y +1 : this.y;
+        }
     }
 }
 
 //display player
 const player = new Player();
 
-//display a bug
+//display a bug 
 const allEnemies = [new Enemy(0,.8),new Enemy(0,1.8),new Enemy(0,2.8) ];
 
 // This listens for key presses and sends the keys to your
