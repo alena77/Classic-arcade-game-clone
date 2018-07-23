@@ -58,8 +58,9 @@ class Enemy extends Characters{
 class Player extends Characters{
     constructor(){
         super();
-
         this.sprite = 'images/char-cat-girl.png';
+        this.win = false;
+        this.moving=false;
     }
     handleInput(input){
         if(input === "left"){
@@ -70,6 +71,22 @@ class Player extends Characters{
             this.y=this.y>0 ? this.y -1 : this.y;
         }else if(input === "down"){
             this.y=this.y<5 ? this.y +1 : this.y;
+        }
+        this.moving = true;
+    }
+
+    //checks if movement is finished before anouncing win
+    render(){
+        super.render();
+        this.moving=false;
+    }
+
+    //method that checks for win
+    update(dt){
+        super.update();
+        if(!this.win && this.onCanvasY && !this.moving){
+            alert("You win!");
+            this.win = true;
         }
     }
 }
