@@ -87,6 +87,7 @@ class Player extends Characters{
         if(!this.win && this.onCanvasY && !this.moving){
             alert("You win!");
             this.win = true;
+            this.dt=0;
         }
     }
 }
