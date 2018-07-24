@@ -6,9 +6,13 @@ class Characters{
         this.y=5;
     }
 
+
+
+
     // Draw the enemy on the screen, required method for game
     render(){
         ctx.drawImage(Resources.get(this.sprite), this.x*101, this.y*83);
+
     }
     //update method
     update(dt){
@@ -37,6 +41,7 @@ class Enemy extends Characters{
         }else{
             //move your enemy on canvas
             this.x = this.x+dt*this.randSpeed;
+            //ctx.rotate(4*Math.PI/180);
         }
     }
     checkCollisions(player){
@@ -48,6 +53,8 @@ class Enemy extends Characters{
             //this.x>=(player.x - .5)
             if(this.x<=(player.x +.5)&& this.x>=(player.x - .5)) {
                 //console.log("they do collide xx");
+                //next line plays clap sound
+                document.querySelector(".clap").play();
                 return true;
             }
         }else{
@@ -65,6 +72,8 @@ class Player extends Characters{
         this.moving=false;
     }
     handleInput(input){
+        //next line plays boom sound
+        document.querySelector(".tink").play();
         if(input === "left"){
             this.x=this.x>0 ? this.x -1 : this.x;
         }else if(input === "right"){
