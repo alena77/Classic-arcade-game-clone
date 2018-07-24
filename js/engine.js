@@ -100,6 +100,10 @@ var Engine = (function(global) {
                 reset();
             }
         });
+        if(player.win){
+            reset();
+            player.win=false;
+        }
         player.update();
     }
 
