@@ -21,7 +21,7 @@ class Characters{
 class Enemy extends Characters{
     constructor(x,y){
         super();
-        this.sprite = 'images/enemy-bug.png';
+        this.sprite = (Math.round(Math.random())===0 ? 'images/enemy-bug.png' : 'images/Rock.png');
         this.x=x;
         this.y=y;
         this.randSpeed=Math.random()*3+1;
@@ -32,6 +32,8 @@ class Enemy extends Characters{
             this.x=this.x-6;
             //generate a random speed increase
             this.randSpeed = Math.random()*3+1; 
+            //switch up the enemy
+            this.sprite = (Math.round(Math.random())===0 ? 'images/enemy-bug.png' : 'images/Rock.png');
         }else{
             //move your enemy on canvas
             this.x = this.x+dt*this.randSpeed;
@@ -95,7 +97,7 @@ class Player extends Characters{
 //display player
 const player = new Player();
 
-//display a bug 
+//display a bug OR a rock!
 const allEnemies = [new Enemy(0,.8),new Enemy(0,1.8),new Enemy(0,2.8) ];
 
 // This listens for key presses and sends the keys to your
