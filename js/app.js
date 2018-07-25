@@ -107,7 +107,12 @@ class Player extends Characters{
 const player = new Player();
 
 //display a bug OR a rock!
-const allEnemies = [new Enemy(0,.8),new Enemy(0,1.8),new Enemy(0,2.8) ];
+//old code that is easy to understand (no for loop, not recommended for larger arrays)
+//const allEnemies = [new Enemy(0,.8),new Enemy(0,1.8),new Enemy(0,2.8) ];
+const allEnemies = [];
+for(var i=0;i<3;i++){
+    allEnemies[i]=new Enemy(0,.8+i);
+}
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
