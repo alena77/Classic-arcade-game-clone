@@ -51,7 +51,7 @@ class Enemy extends Characters{
             //console.log("they do collide yy");
             //&& this.x<=(player.x +.5))
             //this.x>=(player.x - .5)
-            if(this.x<=(player.x +.5)&& this.x>=(player.x - .5)) {
+            if(this.x<=(player.x +.7)&& this.x>=(player.x - .7)) {
                 //console.log("they do collide xx");
                 //next line plays clap sound
                 document.querySelector(".clap").play();
